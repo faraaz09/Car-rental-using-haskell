@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveEasy - Premium Car Rentals</title>
+    <link rel="stylesheet" href="carrental.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="alertContainer"></div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-car"></i>
+                <span>DriveEasy</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cars">Vehicles</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button id="loginBtn" class="btn">Login</button></li>
+            </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Premium Car Rental Service</h1>
+                <p>Find the perfect vehicle for your journey at competitive prices</p>
+                <a href="#cars" class="btn btn-primary">Browse Vehicles</a>
+            </div>
+        </section>
+
+        <section id="cars" class="car-listings">
+            <h2>Our Fleet</h2>
+            <div class="filters">
+                <select id="typeFilter">
+                    <option value="all">All Types</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="luxury">Luxury</option>
+                    <option value="sports">Sports</option>
+                </select>
+                <select id="priceFilter">
+                    <option value="all">All Prices</option>
+                    <option value="50">Under $50</option>
+                    <option value="100">Under $100</option>
+                    <option value="150">Under $150</option>
+                </select>
+                <select id="seatsFilter">
+                    <option value="all">Any Seats</option>
+                    <option value="2">2 Seats</option>
+                    <option value="4">4 Seats</option>
+                    <option value="5">5 Seats</option>
+                    <option value="7">7+ Seats</option>
+                </select>
+            </div>
+            <div id="carsContainer" class="cars-container"></div>
+        </section>
+
+        <section id="booking" class="booking-form hidden">
+            <h2>Complete Your Reservation</h2>
+            <form id="reservationForm">
+                <div class="form-group">
+                    <label for="selectedCar">Selected Vehicle:</label>
+                    <input type="text" id="selectedCar" readonly>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pickupDate">Pickup Date <span class="required">*</span></label>
+                        <input type="date" id="pickupDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="returnDate">Return Date <span class="required">*</span></label>
+                        <input type="date" id="returnDate" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="customerName">Full Name <span class="required">*</span></label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customerEmail">Email <span class="required">*</span></label>
+                        <input type="email" id="customerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">Phone <span class="required">*</span></label>
+                        <input type="tel" id="customerPhone" required>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <span class="btn-text">Confirm Booking</span>
+                        <span class="loading-spinner hidden"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                    <button type="button" id="cancelBooking" class="btn btn-secondary">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>Why Choose DriveEasy?</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Fully Insured</h3>
+                    <p>All rentals include comprehensive insurance coverage</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Our team is available around the clock to assist you</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tag"></i>
+                    <h3>Best Prices</h3>
+                    <p>Competitive rates with no hidden fees</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Premium car rental services,mangalagiri,guntur,Ap</p>
+                    <p><i class="fas fa-phone"></i> 9441367575</p>
+                    <p><i class="fas fa-envelope"></i> rdmhelpdesk@gmail.com</p>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>DriveEasy</h3>
+                <p>Premium car rental service since 2010</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#cars">Vehicles</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 DriveEasy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal hidden">
+        <div class="modal-content confirmation-content">
+            <div class="confirmation-header">
+                <div class="confirmation-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Booking Confirmed!</h2>
+            </div>
+            <div id="confirmationDetails" class="confirmation-body"></div>
+            <div class="confirmation-footer">
+                <button id="closeConfirmation" class="btn btn-primary">Done</button>
+                <button id="printConfirmation" class="btn btn-secondary">
+                    <i class="fas fa-print"></i> Print
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="carrental.js"></script>
+</body>
+</html>
